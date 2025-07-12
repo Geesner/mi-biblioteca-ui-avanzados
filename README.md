@@ -16,7 +16,7 @@ La biblioteca incluye los siguientes componentes principales, estilizados y con 
 
 ## Estructura del Proyecto
 El proyecto está organizado de manera modular para facilitar su comprensión y uso:
-
+```
 mi-biblioteca-ui/
 ├── assets/
 │   ├── css/
@@ -28,7 +28,7 @@ mi-biblioteca-ui/
 │   └── js/
 │       └── main.js         (Script para la interactividad de componentes como Navbar, Modal y Alertas)
 └── index.html              (Página de demostración que muestra todos los componentes)
-
+```
 ## Guía de Uso
 Para utilizar esta biblioteca en tus propios proyectos:
 
