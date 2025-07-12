@@ -1,0 +1,78 @@
+/* assets/css/components/_modal.css */
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija para cubrir toda la ventana */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite scroll si el contenido es grande */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente (overlay) */
+    justify-content: center; /* Centra el contenido modal horizontalmente */
+    align-items: center; /* Centra el contenido modal verticalmente */
+    opacity: 0; /* Opacidad inicial para la transición */
+    transition: opacity var(--transition-speed) var(--transition-timing-function);
+}
+
+.modal--open {
+    display: flex; /* Muestra el modal cuando la clase está activa (vía JS) */
+    opacity: 1;
+}
+
+.modal__content {
+    background-color: var(--color-white);
+    margin: var(--spacing-md); /* Margen para que no se pegue a los bordes de la ventana */
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-md);
+    position: relative;
+    max-width: 500px; /* Ancho máximo del contenido modal */
+    width: 90%; /* Ancho responsivo */
+    transform: translateY(-20px); /* Efecto de entrada: inicia un poco más arriba */
+    transition: transform var(--transition-speed) var(--transition-timing-function) ease-out;
+}
+
+.modal--open .modal__content {
+    transform: translateY(0); /* Vuelve a la posición original al abrir */
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between; /* Título a la izquierda, botón de cierre a la derecha */
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-light); /* Separador visual */
+}
+
+.modal__title {
+    font-size: var(--font-size-lg);
+    margin: 0;
+    color: var(--color-dark);
+}
+
+.modal__close {
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color var(--transition-speed);
+}
+
+.modal__close:hover,
+.modal__close:focus {
+    color: var(--color-dark);
+}
+
+.modal__body {
+    margin-bottom: var(--spacing-md);
+    line-height: var(--line-height-base);
+}
+
+.modal__footer {
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--color-light); /* Separador visual */
+    text-align: right; /* Alinea los botones del footer a la derecha */
+}

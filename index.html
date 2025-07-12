@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Componentes UI Avanzados - Demo</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos específicos para la presentación de la página de demostración (NO parte de la librería de componentes) */
+        body {
+            line-height: var(--line-height-base);
+        }
+        .component-section {
+            padding: var(--spacing-lg) var(--spacing-sm);
+            border-bottom: 1px solid var(--color-light);
+            background-color: var(--color-white);
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--box-shadow-sm);
+            border-radius: var(--border-radius);
+        }
+        .component-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .component-section h2 {
+            margin-bottom: var(--spacing-md);
+            color: var(--color-primary);
+        }
+        .component-example {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md); /* Espacio entre los ejemplos de componentes */
+            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-md);
+            border: 1px dashed var(--color-light);
+            background-color: var(--color-light);
+            border-radius: var(--border-radius);
+            align-items: center; /* Centra verticalmente los elementos en los ejemplos */
+            justify-content: flex-start; /* Alinea los elementos al inicio */
+        }
+        pre {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+            overflow-x: auto; /* Para permitir scroll en código largo */
+            font-size: var(--font-size-sm);
+            width: 100%; /* Ocupa todo el ancho disponible */
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+        }
+        footer {
+            text-align: center;
+            padding: var(--spacing-lg);
+            color: var(--color-text-light);
+            font-size: var(--font-size-sm);
+        }
+        /* Estilos para el layout general de componentes como las Cards */
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid responsivo para cards */
+            gap: var(--spacing-md);
+        }
+    </style>
+</head>
+<body>
+    <header class="container py-lg">
+        <h1>Mi Biblioteca de Componentes UI Avanzados</h1>
+        <p class="mb-md">Una colección de componentes de interfaz de usuario reutilizables, construidos con CSS avanzado y siguiendo las mejores prácticas.</p>
+        <p>Explora cada sección para ver ejemplos de uso y el código HTML asociado.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="component-section" style="padding:0; box-shadow:none; border-radius:0; margin-bottom: var(--spacing-xl);">
+            <h2>Menú de Navegación (Navbar)</h2>
+            <div class="component-example" style="padding:0; border:none; background-color:transparent;">
+                <nav class="navbar" style="width:100%;">
+                    <a href="#" class="navbar__brand">Mi Marca</a>
+                    <button class="navbar__toggle" id="navbar-toggle" aria-label="Abrir menú de navegación">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="navbar__menu" id="navbar-menu">
+                        <li class="navbar__item"><a href="#" class="navbar__link">Inicio</a></li>
+                        <li class="navbar__item"><a href="#" class="navbar__link">Componentes</a></li>
+                        <li class="navbar__item"><a href="#" class="navbar__link">Acerca de</a></li>
+                        <li class="navbar__item"><a href="#" class="navbar__link">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <pre><code class="language-html">
+&lt;nav class="navbar"&gt;
+    &lt;a href="#" class="navbar__brand"&gt;Mi Marca&lt;/a&gt;
+    &lt;button class="navbar__toggle" id="navbar-toggle" aria-label="Abrir menú de navegación"&gt;
+        &lt;i class="fas fa-bars"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;ul class="navbar__menu" id="navbar-menu"&gt;
+        &lt;li class="navbar__item"&gt;&lt;a href="#" class="navbar__link"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="navbar__item"&gt;&lt;a href="#" class="navbar__link"&gt;Componentes&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="navbar__item"&gt;&lt;a href="#" class="navbar__link"&gt;Acerca de&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="navbar__item"&gt;&lt;a href="#" class="navbar__link"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+            </code></pre>
+            <p class="mt-sm">**Nota:** La funcionalidad del menú hamburguesa en móvil requiere el archivo `main.js`.</p>
+        </section>
+
+        <section class="component-section">
+            <h2>Botones</h2>
+            <div class="component-example">
+                <button class="button button--primary">Botón Primario</button>
+                <button class="button button--secondary">Botón Secundario</button>
+                <button class="button button--primary" disabled>Botón Deshabilitado</button>
+                <button class="button button--primary"><i class="fas fa-plus button__icon"></i> Agregar</button>
+                <button class="button button--secondary">Editar <i class="fas fa-edit button__icon--right"></i></button>
+            </div>
+            <pre><code class="language-html">
+&lt;button class="button button--primary"&gt;Botón Primario&lt;/button&gt;
+&lt;button class="button button--secondary"&gt;Botón Secundario&lt;/button&gt;
+&lt;button class="button button--primary" disabled&gt;Botón Deshabilitado&lt;/button&gt;
+&lt;button class="button button--primary"&gt;&lt;i class="fas fa-plus button__icon"&gt;&lt;/i&gt; Agregar&lt;/button&gt;
+&lt;button class="button button--secondary"&gt;Editar &lt;i class="fas fa-edit button__icon--right"&gt;&lt;/i&gt;&lt;/button&gt;
+            </code></pre>
+        </section>
+
+        <section class="component-section">
+            <h2>Tarjetas de Contenido (Cards)</h2>
+            <div class="component-example component-grid">
+                <div class="card">
+                    <img src="assets/img/toolbox.png" alt="Caja de herramientas de diseño" class="card__image">
+                    <div class="card__body">
+                        <h3 class="card__title">Título de la Tarjeta</h3>
+                        <p class="card__text">Este es un ejemplo de texto para el cuerpo de la tarjeta. Puede contener una descripción breve del contenido y adaptarse a diferentes longitudes.</p>
+                        <div class="card__actions">
+                            <button class="button button--primary">Ver Más</button>
+                            <button class="button button--secondary">Compartir</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/img/code.png" alt="Código de programación" class="card__image">
+                    <div class="card__body">
+                        <h3 class="card__title">Otra Tarjeta de Contenido</h3>
+                        <p class="card__text">Contenido más largo para demostrar cómo el texto se adapta al espacio disponible dentro de la tarjeta, manteniendo la coherencia visual del componente.</p>
+                        <div class="card__actions">
+                            <button class="button button--primary">Acción Principal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <pre><code class="language-html">
+&lt;div class="card"&gt;
+    &lt;img src="assets/img/toolbox.png" alt="Caja de herramientas de diseño" class="card__image"&gt;
+    &lt;div class="card__body"&gt;
+        &lt;h3 class="card__title"&gt;Título de la Tarjeta&lt;/h3&gt;
+        &lt;p class="card__text"&gt;Este es un ejemplo de texto para el cuerpo de la tarjeta.&lt;/p&gt;
+        &lt;div class="card__actions"&gt;
+            &lt;button class="button button--primary"&gt;Ver Más&lt;/button&gt;
+            &lt;button class="button button--secondary"&gt;Compartir&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="card"&gt;
+    &lt;img src="assets/img/code.png" alt="Código de programación" class="card__image"&gt;
+    &lt;div class="card__body"&gt;
+        &lt;h3 class="card__title"&gt;Otra Tarjeta de Contenido&lt;/h3&gt;
+        &lt;p class="card__text"&gt;Contenido más largo para demostrar cómo el texto se adapta al espacio disponible dentro de la tarjeta.&lt;/p&gt;
+        &lt;div class="card__actions"&gt;
+            &lt;button class="button button--primary"&gt;Acción Principal&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+        </section>
+
+        <section class="component-section">
+            <h2>Campos de Formulario</h2>
+            <div class="component-example" style="flex-direction: column; align-items: flex-start;">
+                <div class="form-group" style="width: 100%;">
+                    <label for="input-text" class="form-label">Nombre de Usuario</label>
+                    <input type="text" id="input-text" class="form-input" placeholder="Ingresa tu nombre">
+                </div>
+                <div class="form-group" style="width: 100%;">
+                    <label for="input-email" class="form-label">Correo Electrónico</label>
+                    <input type="email" id="input-email" class="form-input form-input--error" placeholder="email@ejemplo.com">
+                    <small class="form-text-error">Este campo es requerido y no es un correo válido.</small>
+                </div>
+                <div class="form-group" style="width: 100%;">
+                    <label for="textarea-example" class="form-label">Tu Mensaje</label>
+                    <textarea id="textarea-example" class="form-textarea" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+                <div class="form-group" style="width: 100%;">
+                    <div class="form-check">
+                        <input type="checkbox" id="checkbox-example" class="form-check__input">
+                        <label for="checkbox-example" class="form-check__label">Acepto los términos y condiciones</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="radio-example1" name="radio-group" class="form-check__input" checked>
+                        <label for="radio-example1" class="form-check__label">Opción de Radio 1</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="radio-example2" name="radio-group" class="form-check__input">
+                        <label for="radio-example2" class="form-check__label">Opción de Radio 2</label>
+                    </div>
+                </div>
+            </div>
+            <pre><code class="language-html">
+&lt;div class="form-group"&gt;
+    &lt;label for="input-text" class="form-label"&gt;Nombre de Usuario&lt;/label&gt;
+    &lt;input type="text" id="input-text" class="form-input" placeholder="Ingresa tu nombre"&gt;
+&lt;/div&gt;
+
+&lt;div class="form-group"&gt;
+    &lt;label for="input-email" class="form-label"&gt;Correo Electrónico&lt;/label&gt;
+    &lt;input type="email" id="input-email" class="form-input form-input--error" placeholder="email@ejemplo.com"&gt;
+    &lt;small class="form-text-error"&gt;Este campo es requerido y no es un correo válido.&lt;/small&gt;
+&lt;/div&gt;
+
+&lt;div class="form-group"&gt;
+    &lt;label for="textarea-example" class="form-label"&gt;Tu Mensaje&lt;/label&gt;
+    &lt;textarea id="textarea-example" class="form-textarea" rows="4" placeholder="Escribe tu mensaje aquí..."&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+
+&lt;div class="form-group"&gt;
+    &lt;div class="form-check"&gt;
+        &lt;input type="checkbox" id="checkbox-example" class="form-check__input"&gt;
+        &lt;label for="checkbox-example" class="form-check__label"&gt;Acepto los términos y condiciones&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="form-check"&gt;
+        &lt;input type="radio" id="radio-example1" name="radio-group" class="form-check__input" checked&gt;
+        &lt;label for="radio-example1" class="form-check__label"&gt;Opción de Radio 1&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+        </section>
+
+        <section class="component-section">
+            <h2>Modal (Ventana Emergente)</h2>
+            <div class="component-example">
+                <button class="button button--primary" id="open-modal-btn">Abrir Modal de Ejemplo</button>
+            </div>
+            <pre><code class="language-html">
+&lt;!-- Botón para activar el modal --&gt;
+&lt;button class="button button--primary" id="open-modal-btn"&gt;Abrir Modal de Ejemplo&lt;/button&gt;
+
+&lt;!-- El componente Modal --&gt;
+&lt;div class="modal" id="my-modal"&gt;
+    &lt;div class="modal__content"&gt;
+        &lt;div class="modal__header"&gt;
+            &lt;h3 class="modal__title"&gt;Título del Modal&lt;/h3&gt;
+            &lt;span class="modal__close" id="close-modal-btn"&gt;&amp;times;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="modal__body"&gt;
+            &lt;p&gt;Este es el contenido principal de tu ventana modal. Puede incluir texto, imágenes o formularios.&lt;/p&gt;
+            &lt;p&gt;Haz clic en la "X", en el botón "Cancelar" o fuera de esta ventana para cerrarla. También puedes usar la tecla ESC.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="modal__footer"&gt;
+            &lt;button class="button button--secondary" id="cancel-modal-btn"&gt;Cancelar&lt;/button&gt;
+            &lt;button class="button button--primary"&gt;Confirmar&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+            <p class="mt-sm">**Nota:** La funcionalidad de abrir y cerrar el modal (incluyendo el clic fuera y la tecla ESC) requiere el archivo `main.js`.</p>
+        </section>
+
+        <section class="component-section">
+            <h2>Alertas</h2>
+            <div class="component-example" style="flex-direction: column; align-items: flex-start;">
+                <div class="alert alert--primary">
+                    <i class="fas fa-info-circle alert__icon"></i>
+                    <span class="alert__message">Esta es una alerta informativa básica.</span>
+                    <button class="alert__close">&times;</button>
+                </div>
+                <div class="alert alert--success">
+                    <i class="fas fa-check-circle alert__icon"></i>
+                    <span class="alert__message">¡Éxito! La operación se completó correctamente.</span>
+                    <button class="alert__close">&times;</button>
+                </div>
+                <div class="alert alert--danger">
+                    <i class="fas fa-times-circle alert__icon"></i>
+                    <span class="alert__message">Error: No se pudo procesar tu solicitud en este momento.</span>
+                    <button class="alert__close">&times;</button>
+                </div>
+                <div class="alert alert--warning">
+                    <i class="fas fa-exclamation-triangle alert__icon"></i>
+                    <span class="alert__message">Advertencia: Revisa la información antes de continuar.</span>
+                    <button class="alert__close">&times;</button>
+                </div>
+                <div class="alert alert--info">
+                    <i class="fas fa-lightbulb alert__icon"></i>
+                    <span class="alert__message">Sugerencia: Puedes usar esta función para optimizar tu flujo de trabajo.</span>
+                    <button class="alert__close">&times;</button>
+                </div>
+            </div>
+            <pre><code class="language-html">
+&lt;div class="alert alert--primary"&gt;
+    &lt;i class="fas fa-info-circle alert__icon"&gt;&lt;/i&gt;
+    &lt;span class="alert__message"&gt;Esta es una alerta informativa básica.&lt;/span&gt;
+    &lt;button class="alert__close"&gt;&amp;times;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="alert alert--success"&gt;
+    &lt;i class="fas fa-check-circle alert__icon"&gt;&lt;/i&gt;
+    &lt;span class="alert__message"&gt;¡Éxito! La operación se completó correctamente.&lt;/span&gt;
+    &lt;button class="alert__close"&gt;&amp;times;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="alert alert--danger"&gt;
+    &lt;i class="fas fa-times-circle alert__icon"&gt;&lt;/i&gt;
+    &lt;span class="alert__message"&gt;Error: No se pudo procesar tu solicitud en este momento.&lt;/span&gt;
+    &lt;button class="alert__close"&gt;&amp;times;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- También disponibles: .alert--warning, .alert--info --&gt;
+            </code></pre>
+            <p class="mt-sm">**Nota:** El botón de cierre de la alerta requiere el archivo `main.js` para funcionar.</p>
+        </section>
+
+        <section class="component-section">
+            <h2>Badges (Etiquetas)</h2>
+            <div class="component-example">
+                <span class="badge badge--primary">Nuevo</span>
+                <span class="badge badge--secondary">Pendiente</span>
+                <span class="badge badge--success">Completado</span>
+                <span class="badge badge--danger">Urgente</span>
+                <span class="badge badge--warning">En revisión</span>
+                <span class="badge badge--info">Info</span>
+                <span class="badge badge--light">Borrador</span>
+                <span class="badge badge--dark">Procesado</span>
+                <span class="badge badge--primary">Mensajes <span class="badge badge--light" style="margin-left:0.5rem;">5</span></span>
+            </div>
+            <pre><code class="language-html">
+&lt;span class="badge badge--primary"&gt;Nuevo&lt;/span&gt;
+&lt;span class="badge badge--secondary"&gt;Pendiente&lt;/span&gt;
+&lt;span class="badge badge--success"&gt;Completado&lt;/span&gt;
+&lt;span class="badge badge--danger"&gt;Urgente&lt;/span&gt;
+&lt;span class="badge badge--warning"&gt;En revisión&lt;/span&gt;
+&lt;span class="badge badge--info"&gt;Info&lt;/span&gt;
+&lt;span class="badge badge--light"&gt;Borrador&lt;/span&gt;
+&lt;span class="badge badge--dark"&gt;Procesado&lt;/span&gt;
+&lt;span class="badge badge--primary"&gt;Mensajes &lt;span class="badge badge--light" style="margin-left:0.5rem;"&gt;5&lt;/span&gt;&lt;/span&gt;
+            </code></pre>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 **Geesner Marlon Orellana Intriago**. Todos los derechos reservados.</p>
+        <p>Desarrollado como demostración de habilidades en CSS avanzado.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

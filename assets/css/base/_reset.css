@@ -1,0 +1,48 @@
+/* assets/css/base/_reset.css */
+
+/* Box-sizing universal para un modelo de caja predecible */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Eliminar márgenes y rellenos predeterminados de elementos comunes */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Eliminar estilos de lista por defecto */
+ul, ol {
+    list-style: none;
+}
+
+/* Asegurar que las imágenes no desborden su contenedor y eliminar espacio extra */
+img, picture, video, canvas, svg {
+    max-width: 100%;
+    display: block;
+}
+
+/* Eliminar estilos predeterminados de enlaces */
+a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del texto circundante */
+}
+
+/* Heredar fuentes y line-height en elementos de formulario */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* Reseteo básico para el botón */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Eliminar outline de foco en navegadores modernos solo para usuarios de mouse */
+:focus:not(:focus-visible) {
+    outline: none;
+}

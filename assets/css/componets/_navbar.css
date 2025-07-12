@@ -1,0 +1,88 @@
+/* assets/css/components/_navbar.css */
+
+.navbar {
+    background-color: var(--color-dark);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--color-white);
+    display: flex;
+    justify-content: space-between; /* Brand a la izquierda, menú a la derecha */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.navbar__brand {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: var(--color-white);
+    text-decoration: none;
+    padding: var(--spacing-xs) 0; /* Aumenta el área clickeable */
+}
+
+.navbar__toggle {
+    display: none; /* Oculto por defecto en desktop */
+    font-size: var(--font-size-lg);
+    color: var(--color-white);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: var(--spacing-xs);
+}
+
+.navbar__menu {
+    display: flex; /* Muestra el menú en desktop */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Permite que el menú crezca */
+    justify-content: flex-end; /* Alinea los ítems a la derecha en desktop */
+}
+
+.navbar__item {
+    margin-left: var(--spacing-md); /* Espacio entre ítems del menú */
+}
+
+.navbar__link {
+    display: block;
+    padding: var(--spacing-xs) 0;
+    color: var(--color-white);
+    transition: color var(--transition-speed) var(--transition-timing-function);
+}
+
+.navbar__link:hover,
+.navbar__link:focus {
+    color: var(--color-primary); /* Cambio de color al interactuar */
+}
+
+/* Media Queries para diseño responsivo */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Apila elementos verticalmente en móvil */
+        align-items: flex-start; /* Alinea todo a la izquierda */
+    }
+    .navbar__toggle {
+        display: block; /* Muestra el botón de hamburguesa en móvil */
+        position: absolute; /* Posiciona el botón sobre el navbar */
+        right: var(--spacing-md);
+        top: var(--spacing-sm);
+    }
+
+    .navbar__menu {
+        display: none; /* Oculta el menú por defecto en móvil */
+        flex-direction: column; /* Ítems apilados verticalmente */
+        width: 100%; /* Ocupa todo el ancho */
+        margin-top: var(--spacing-sm);
+        padding-bottom: var(--spacing-sm);
+        text-align: center; /* Centra el texto de los ítems */
+    }
+
+    .navbar__menu--open {
+        display: flex; /* Muestra el menú cuando la clase está activa (vía JS) */
+    }
+
+    .navbar__item {
+        margin: var(--spacing-xs) 0; /* Espacio vertical entre ítems */
+    }
+    .navbar__brand {
+        margin-left: 0; /* Asegura que la marca esté a la izquierda */
+    }
+}

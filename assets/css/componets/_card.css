@@ -1,0 +1,51 @@
+/* assets/css/components/_card.css */
+
+.card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-md); /* Sombra para dar profundidad */
+    overflow: hidden; /* Asegura que el contenido con border-radius no se desborde */
+    display: flex;
+    flex-direction: column; /* Contenido apilado verticalmente */
+    max-width: 350px; /* Ancho máximo para el diseño responsivo de la tarjeta */
+    width: 100%; /* Permite que la tarjeta ocupe el ancho disponible */
+}
+
+.card__image {
+    /* Nuevos ajustes para que el icono sea pequeño y centrado */
+    width: 50px;  /* Ancho fijo para el icono */
+    height: 50px; /* Altura fija para el icono */
+    object-fit: contain; /* Asegura que el icono se ajuste dentro de 50x50px sin recortarse */
+    display: block; /* Para permitir que margin: auto lo centre */
+    margin: var(--spacing-md) auto; /* Centra el icono horizontalmente y le da espacio vertical */
+    /* Puedes dejar este fondo para ver el área de la imagen, o quitarlo si no lo quieres */
+    /* background-color: var(--color-light); */
+    /* El padding que habíamos agregado también lo puedes quitar si no quieres espacio adicional dentro del área de la imagen */
+    /* padding: var(--spacing-sm); */
+}
+
+.card__body {
+    padding: var(--spacing-md);
+    flex-grow: 1; /* Permite que el cuerpo de la tarjeta crezca y ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
+}
+
+.card__title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-dark);
+}
+
+.card__text {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-sm);
+    flex-grow: 1; /* Permite que el texto ocupe espacio disponible, empujando acciones */
+}
+
+.card__actions {
+    margin-top: auto; /* Empuja las acciones al final del card body */
+    display: flex;
+    gap: var(--spacing-sm); /* Espacio entre los botones de acción */
+}

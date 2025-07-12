@@ -1,0 +1,39 @@
+/* assets/css/base/_variables.css */
+
+:root {
+    /* Colores Base */
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-warning: #ffc107;
+    --color-info: #17a2b8;
+    --color-light: #f8f9fa;
+    --color-dark: #343a40;
+    --color-text: #212529;
+    --color-text-light: #6c757d;
+    --color-white: #ffffff;
+
+    /* Tipografía */
+    --font-family-base: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-size-base: 1rem;       /* 16px por defecto */
+    --font-size-sm: 0.875rem;     /* 14px */
+    --font-size-lg: 1.25rem;      /* 20px */
+    --line-height-base: 1.5;
+
+    /* Espaciados (basados en un sistema de 8px) */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 1rem;     /* 16px */
+    --spacing-md: 1.5rem;   /* 24px */
+    --spacing-lg: 2rem;     /* 32px */
+    --spacing-xl: 3rem;     /* 48px */
+
+    /* Radios de Borde y Sombras */
+    --border-radius: 0.25rem; /* 4px */
+    --box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --box-shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+    /* Transiciones */
+    --transition-speed: 0.3s;
+    --transition-timing-function: ease-in-out;
+}

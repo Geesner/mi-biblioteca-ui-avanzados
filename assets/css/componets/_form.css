@@ -1,0 +1,76 @@
+/* assets/css/components/_form.css */
+
+.form-group {
+    margin-bottom: var(--spacing-md); /* Espacio entre grupos de formulario */
+}
+
+.form-label {
+    display: block; /* Asegura que la etiqueta esté en su propia línea */
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-base);
+    color: var(--color-dark);
+    font-weight: 500;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    display: block;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--color-text);
+    background-color: var(--color-white);
+    border: 1px solid #ced4da;
+    border-radius: var(--border-radius);
+    transition: border-color var(--transition-speed) var(--transition-timing-function),
+                box-shadow var(--transition-speed) var(--transition-timing-function);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    border-color: var(--color-primary); /* Borde de color primario al enfocar */
+    outline: 0; /* Elimina el outline por defecto del navegador */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra de foco azul */
+}
+
+/* Estado de error para campos de formulario */
+.form-input--error,
+.form-textarea--error,
+.form-select--error {
+    border-color: var(--color-danger); /* Borde rojo para indicar error */
+}
+
+.form-input--error:focus,
+.form-textarea--error:focus,
+.form-select--error:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Sombra de foco roja en error */
+}
+
+.form-text-error {
+    font-size: var(--font-size-sm);
+    color: var(--color-danger);
+    margin-top: var(--spacing-xs);
+}
+
+/* Estilos para Checkbox y Radio personalizados */
+.form-check {
+    display: flex; /* Para alinear el input con la etiqueta */
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.form-check__input {
+    margin-right: var(--spacing-xs);
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0; /* Evita que el checkbox/radio se encoja */
+}
+
+.form-check__label {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    cursor: pointer;
+}
